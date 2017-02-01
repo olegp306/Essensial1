@@ -14,14 +14,30 @@ namespace Essential1._4
 
         public int Latitude
         {
-            get;
-            set;
+            get
+            {
+                return latitude;
+            }
         }
-
         public int Longtitude
-        { 
-            get;
-            set;
+        {
+            get
+            {
+                return longtitude;
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+        public Point(int latitude, int longtitude, string name)
+        {
+            this.latitude = latitude;
+            this.longtitude = longtitude;
+            this.name = name;
         }
 
 

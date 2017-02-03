@@ -10,6 +10,11 @@ namespace Essensial2
     {
         static void Main(string[] args)
         {
+
+            User user = new User("Oleg306", "oleg", "panyukov", 35);
+            //user.DateOfCompletion = DateTime.Now.AddDays(2);
+            user.Show();
+            Console.ReadKey();
         }
     }
 }

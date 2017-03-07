@@ -12,11 +12,15 @@ namespace Essential2._3
         {
             Employee employee = new Employee("Oleg", "Panyukov");
             employee.Position = "директор";
-            employee.ShowEmployee( 10, 13);
+            employee.WorkExperience = 10;
+            employee.ShowEmployee();
+
+            Console.WriteLine();
 
             Employee employee2 = new Employee("Marina", "Fortuna");
             employee2.Position = "секретарь";
-            employee2.ShowEmployee( 5, 13);
+            employee2.WorkExperience = 5;
+            employee2.ShowEmployee();
 
             Console.ReadKey();
 

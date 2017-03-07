@@ -10,11 +10,14 @@ namespace Essential2._3
     {
         readonly string firstName;
         readonly string surName;
+        readonly double defaultLoan = 13;
+
         string position;
         int workExperience;
+        double loan;
 
-        public String FirstName { get; set; }
-        public String SurName { get; set; }
+        public String FirstName { get { return firstName; } set { } }
+        public String SurName { get { return surName; } set { } }
         public String Position
         {
             get
@@ -38,6 +41,24 @@ namespace Essential2._3
                 if (value >= 0)
                     workExperience = value;
             }
+        }
+        public double Loan
+        {
+            get
+            {
+                if (loan == 0)
+                    return defaultLoan;
+                else
+                    return loan;
+            }
+            set { if (value >= 0) loan = value; }
+        }
+
+        public Employee(string firstName, string surName, double loan)
+        {
+            this.firstName = firstName;
+            this.surName = surName;
+            this.loan = loan;
         }
 
         public Employee(string firstName, string surName)
@@ -67,19 +88,12 @@ namespace Essential2._3
             return salary;
         }
 
-        private double getLoanAmount(double salary)
+        private double getLoanAmount()
         {
-            return getLoanAmount(13, salary);
+            return getSalary() * Loan;
         }
 
-        private double getLoanAmount(double loan, double salary)
-        {
-            double loanAmount = 0;
-
-            return loanAmount;
-        }
-
-        public void ShowEmployee( double loan)
+        public void ShowEmployee()
         {
             double salary = getSalary();
 
@@ -87,7 +101,7 @@ namespace Essential2._3
             Console.WriteLine("Фамилия:{0}", SurName);
             Console.WriteLine("Должность:{0}", Position);
             Console.WriteLine("Стаж:{0}", workExperience);
-            Console.WriteLine("Налог на ЗП:{0}", loan);
+            Console.WriteLine("Налог на ЗП:{0}", getLoanAmount());
             Console.WriteLine("Зарплата:{0}", salary);
 
         }

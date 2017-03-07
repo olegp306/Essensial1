@@ -11,10 +11,12 @@ namespace Essential2._3
         static void Main(string[] args)
         {
             Employee employee = new Employee("Oleg", "Panyukov");
-            employee.ShowEmployee("директор", 10, 13);
+            employee.Position = "директор";
+            employee.ShowEmployee( 10, 13);
 
             Employee employee2 = new Employee("Marina", "Fortuna");
-            employee2.ShowEmployee("секретарь", 5, 13);
+            employee2.Position = "секретарь";
+            employee2.ShowEmployee( 5, 13);
 
             Console.ReadKey();
 

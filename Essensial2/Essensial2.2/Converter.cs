@@ -10,28 +10,39 @@ namespace Essensial2._2
     {
         readonly double UsdRate;
         readonly double EuroRate;
-        readonly double RusRate;
-        readonly double GrivnaRate;
+        readonly double RubRate;
+
+        //double GrivnaAmount;
 
         public double Rub;
 
-        public Converter(double usdRate, double euroRate, double grivnaRate)
+        public Converter(double usdRate, double euroRate, double rusRate)
         {
             this.UsdRate = usdRate;
             this.EuroRate = euroRate;
-            this.GrivnaRate = grivnaRate;
+            this.RubRate = rusRate;
         }
 
       
 
-        void ShowCurrencyInRuble()
+        public void ShowGrivnaInAllCurrency(double grivnaAmount)
         {
-            Console.WriteLine("У вас {0}рублей  это {1}долларов,{2}евро, {3}гривен", Rub, Rub/UsdRate, Rub / EuroRate, Rub / GrivnaRate);
+            Console.WriteLine("У вас {0}гривен  это {1} долларов, {2} евро, {3} рублей", grivnaAmount, grivnaAmount / UsdRate, grivnaAmount / EuroRate, grivnaAmount / RubRate);
         }
 
-        void ShowRubleInCurrency()
+        public void ShowEuro(double grivnaAmount)
         {
-            Console.WriteLine("У вас {0}рублей  это {1}долларов,{2}евро, {3}гривен", Rub, Rub / UsdRate, Rub / EuroRate, Rub / GrivnaRate);
+            Console.WriteLine("У вас {0}гривен  это {1} евро ", grivnaAmount, EuroRate * grivnaAmount);
+        }
+
+        public void ShowUsd(double grivnaAmount)
+        {
+            Console.WriteLine("У вас {0} гривен  это {1} долларов ", grivnaAmount, UsdRate * grivnaAmount);
+        }
+
+        public void ShowRub(double grivnaAmount)
+        {
+            Console.WriteLine("У вас {0} гривен  это {1} рублей ", grivnaAmount, RubRate * grivnaAmount);
         }
 
     }

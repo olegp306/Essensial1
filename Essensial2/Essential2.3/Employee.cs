@@ -90,7 +90,7 @@ namespace Essential2._3
 
         private double getLoanAmount()
         {
-            return getSalary() * Loan;
+            return getSalary() * Loan/100;
         }
 
         public void ShowEmployee()

@@ -15,7 +15,13 @@ namespace AdditionalTask
     {
         static void Main(string[] args)
         {
-            
+            Book book = new Book();
+            book.AddTitle("How I стал developer");
+            book.AddAutor("Oleg PAnyukov");
+            book.AddContent("Oleg Panyukov. My deleloper expirience is very diferent...");
+
+
+            Console.ReadKey();
         }
     }
 }

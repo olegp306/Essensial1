@@ -6,37 +6,16 @@ using System.Threading.Tasks;
 
 namespace AdditionalTask
 {
+    //    Задание
+    //Используя Visual Studio, создайте проект по шаблону Console Application.
+    //Требуется: Изменить 12 пример первого урока(работа с документом) и создать 
+    //общий абстрактный класс для всех частей документа.
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите ключ продукта");
-            string key = Console.ReadLine();
-            if (key != null)
-            {
-                DocumentWorker document = null;
-                switch (key)
-                {
-                    case "111":
-                        document = new ExpertDocumentWorker();
-                        break;
-                    case "222":
-                        document = new ProDocumentWorker();
-                        break;
-                    default:
-                        Console.WriteLine("Ключ неверен");
-                        document = new DocumentWorker();
-                        break;
-                }
-
-                if (document != null)
-                {
-                    document.OpenDocument();
-                    document.EditDocument();
-                    document.SaveDocument();
-                }
-            }
-            Console.ReadKey();
+            
         }
     }
 }

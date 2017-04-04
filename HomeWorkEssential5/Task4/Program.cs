@@ -14,7 +14,8 @@ namespace Task4
             Console.WriteLine("Ассортимент магазина ");
             for (int i = 0; i < store.Lenght; i++)
             {
-                Console.WriteLine("Товар №{0}: {1}",i+1,store[i]); 
+                Console.WriteLine("Товар №{0}: {1}",i+1,store[i]);
+                Console.WriteLine(  ); 
             }
 
             Console.WriteLine("Введите название товара:");
